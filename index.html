@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<p>This is a Honkai Star Rail + Wordle game! It involves clicking the icons of Honkai Star Rail characters which each have their own unique properties (Elements, Paths, and Rarity). By choosing a character it will show up on the table and when you confirm your choice, it will reveal which attributes were correct (a red X for wrong and a green check for correct). You get 8 attempts and you can reset once you're done. Resetting will choose a new character and submitting twice in a row just submits the same character. Have fun and goodluck!</p>
+<div id="formatting" style="flex">
+  <table id="table">
+    <tr class="row" id="r0">
+      <th class="header" id="h1">Character</th>
+      <th class="header" id="h3">Element</th>
+      <th class="header" id="h5">Path</th>
+      <th class="header" id="h7">Rarity</th> 
+    </tr>
+    <tr class="row" id="r1">
+      <td class="cell"><div class="temp"><img class="iconz" id="c11"><img class="checkz" id="c12"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c13"><img class="checkz" id="c14"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c15"><img class="checkz" id="c16"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c17"><img class="checkz" id="c18"></div></td>
+    </tr>
+    <tr class="row" id="r2">
+      <td class="cell"><div class="temp"><img class="iconz" id="c21"><img class="checkz" id="c22"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c23"><img class="checkz" id="c24"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c25"><img class="checkz" id="c26"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c27"><img class="checkz" id="c28"></div></td>
+    </tr>
+    <tr class="row" id="r3">
+      <td class="cell"><div class="temp"><img class="iconz" id="c31"><img class="checkz" id="c32"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c33"><img class="checkz" id="c34"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c35"><img class="checkz" id="c36"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c37"><img class="checkz" id="c38"></div></td>
+    </tr>
+    <tr class="row" id="r4">
+      <td class="cell"><div class="temp"><img class="iconz" id="c41"><img class="checkz" id="c42"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c43"><img class="checkz" id="c44"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c45"><img class="checkz" id="c46"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c47"><img class="checkz" id="c48"></div></td>
+    </tr>
+    <tr class="row" id="r5">
+      <td class="cell"><div class="temp"><img class="iconz" id="c51"><img class="checkz" id="c52"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c53"><img class="checkz" id="c54"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c55"><img class="checkz" id="c56"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c57"><img class="checkz" id="c58"></div></td>
+    </tr>
+    <tr class="row" id="r6">
+      <td class="cell"><div class="temp"><img class="iconz" id="c61"><img class="checkz" id="c62"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c63"><img class="checkz" id="c64"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c65"><img class="checkz" id="c66"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c67"><img class="checkz" id="c68"></div></td>
+    </tr>
+    <tr class="row" id="r7">
+      <td class="cell"><div class="temp"><img class="iconz" id="c71"><img class="checkz" id="c72"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c73"><img class="checkz" id="c74"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c75"><img class="checkz" id="c76"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c77"><img class="checkz" id="c78"></div></td>
+    </tr>
+    <tr class="row" id="r8">
+      <td class="cell"><div class="temp"><img class="iconz" id="c81"><img class="checkz" id="c82"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c83"><img class="checkz" id="c84"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c85"><img class="checkz" id="c86"></div></td>
+      <td class="cell"><div class="temp"><img class="iconz" id="c87"><img class="checkz" id="c88"></div></td>
+    </tr>
+  </table>
+  <button class="buttonz" onclick="checkAttributes()">Confirm Choice! :3</button>
+  <button class="buttonz" onclick="reset()">Reset the Game! :D</button>
+  <table id="options">
+    <tr>
+      <td><div class="teemp"><img onclick="setChoice(0)" class="icons" src="https://i.imgur.com/PujJyge.png" id="blackswanBtn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(1)" class="icons" src="https://i.imgur.com/7UcitVj.png" id="sparkleBtn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(2)" class="icons" src="https://i.imgur.com/A9VVzj5.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(3)" class="icons" src="https://i.imgur.com/kSC7HGC.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(4)" class="icons" src="https://i.imgur.com/sIiQIDG.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(5)" class="icons" src="https://i.imgur.com/oAPQmZN.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(6)" class="icons" src="https://i.imgur.com/f4bOKDJ.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(7)" class="icons" src="https://i.imgur.com/vv8njxn.png" id="Btn"></div></td>
+    </tr>
+    <tr>
+      <td><div class="teemp"><img onclick="setChoice(8)" class="icons" src="https://i.imgur.com/OMkdZm2.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(9)" class="icons" src="https://i.imgur.com/4mEBruP.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(10)" class="icons" src="https://i.imgur.com/OdsrwcP.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(11)" class="icons" src="https://i.imgur.com/hQfaDur.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(12)" class="icons" src="https://i.imgur.com/Bgm5UbI.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(13)" class="icons" src="https://i.imgur.com/BP5HRHD.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(14)" class="icons" src="https://i.imgur.com/JBOjerq.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(15)" class="icons" src="https://i.imgur.com/BdN7aoH.png" id="Btn"></div></td>
+    </tr>
+    <tr>
+      <td><div class="teemp"><img onclick="setChoice(16)" class="icons" src="https://i.imgur.com/BiQsXC3.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(17)" class="icons" src="https://i.imgur.com/ay4gKo9.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(18)" class="icons" src="https://i.imgur.com/ysD3xP6.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(19)" class="icons" src="https://i.imgur.com/qVLhsj6.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(20)" class="icons" src="https://i.imgur.com/OOa77zU.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(21)" class="icons" src="https://i.imgur.com/lXEc87S.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(22)" class="icons" src="https://i.imgur.com/Tp4M9cZ.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(23)" class="icons" src="https://i.imgur.com/Unaa6ek.png" id="Btn"></div></td>
+    </tr>
+    <tr>
+      <td><div class="teemp"><img onclick="setChoice(24)" class="icons" src="https://i.imgur.com/b0R9RHL.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(25)" class="icons" src="https://i.imgur.com/9e2U8Ho.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(26)" class="icons" src="https://i.imgur.com/EGBmQKv.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(27)" class="icons" src="https://i.imgur.com/pXE2GTv.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(28)" class="icons" src="https://i.imgur.com/HTmjyL7.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(29)" class="icons" src="https://i.imgur.com/wJ0AjSR.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(30)" class="icons" src="https://i.imgur.com/Khb8cPs.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(31)" class="icons" src="https://i.imgur.com/3f5gK9A.png" id="Btn"></div></td>
+    </tr>
+    <tr>
+      <td><div class="teemp"><img onclick="setChoice(32)" class="icons" src="https://i.imgur.com/C12jyol.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(33)" class="icons" src="https://i.imgur.com/VMRN9FC.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(34)" class="icons" src="https://i.imgur.com/f8NyNfM.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(35)" class="icons" src="https://i.imgur.com/0FF2r8z.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(36)" class="icons" src="https://i.imgur.com/QKyLfPi.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(37)" class="icons" src="https://i.imgur.com/K55X3su.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(38)" class="icons" src="https://i.imgur.com/IwilUXR.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(39)" class="icons" src="https://i.imgur.com/rrKyKhp.png" id="Btn"></div></td>
+    </tr>
+    <tr>
+      <td><div class="teemp"><img onclick="setChoice(40)" class="icons" src="https://i.imgur.com/NHfn51q.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(41)" class="icons" src="https://i.imgur.com/kX1Z82k.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(42)" class="icons" src="https://i.imgur.com/v7lXpXb.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(43)" class="icons" src="https://i.imgur.com/ICl8R8V.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(44)" class="icons" src="https://i.imgur.com/rhbxuib.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(45)" class="icons" src="https://i.imgur.com/olbCC4m.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(46)" class="icons" src="https://i.imgur.com/lbFWhqh.png" id="Btn"></div></td>
+      <td><div class="teemp"><img onclick="setChoice(47)" class="icons" src="https://i.imgur.com/RBlrvEY.png" id="Btn"></div></td>
+    </tr>
+  </table>
+</div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: mistyrose;
+}
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#table {
+  float: left;
+  margin-left: 0.6%;
+  margin-right: 0.6%;
+  background-color: darkslategray;
+}
+.icons {
+  height: 80px;
+  width: 80px;
+  margin: auto;
+}
+.iconz, .checkz {
+  height: 100%;
+  width: 45%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+.temp {
+  height: 60px;
+  width: 133px;
+}
+#options {
+  border: none;
+  float: right;
+  margin-left: 0.6%;
+  margin-right: 0.6%;
+}
+#formatting {
+  margin-top: 50px;
+}
+.buttonz {
+  height: 40px;
+  width: 120px;
+  background-color: mark;
+}
